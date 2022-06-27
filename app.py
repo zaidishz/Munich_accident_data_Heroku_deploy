@@ -22,13 +22,11 @@ def predict():
     Category_Fluchtunfälle = int(request.form.get('Category_Fluchtunfälle'))
     Category_Verkehrsunfälle = int(request.form.get('Category_Verkehrsunfälle'))
     Type_insgesamt = int(request.form.get('Type_insgesamt'))
-    #Type_VerletzteundGetötete = int(request.form.get('Type_VerletzteundGetötete'))
     Type_VerletzteundGetötete = 0
-    #Type_mitPersonenschäden = int(request.form.get('Type_mitPersonenschäden'))
     Type_mitPersonenschäden = 0
     features = [[Year, Month, Category_Alkoholunfälle, Category_Fluchtunfälle, Category_Verkehrsunfälle, Type_VerletzteundGetötete, Type_insgesamt, Type_mitPersonenschäden]]
     prediction = int(model.predict(features))
-    #text = output
+    
 
     return render_template(
         'index.html',
